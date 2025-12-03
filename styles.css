@@ -189,13 +189,9 @@ body > .header .user-info {
     gap: 30px;
 }
 
-.content * h2 {
-    height: 30px;
-    margin: 20px 0;
-}
-
-.content * h2 + * {
-    height: calc(100% - 50px);
+.content > * {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .projects {
@@ -259,27 +255,31 @@ body > .header .user-info {
 
 .trend-item {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
+    align-items: center;
     column-gap: 20px;
+    row-gap: 4px;
 }
 
 .trend-item > img {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin: 0;
 }
 
 .trend-item > .tag {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    align-self: end;
 }
 
 .trend-item > p {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    align-self: start;
 }
 
 :not(.header).item:hover {
